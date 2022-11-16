@@ -1,14 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">Flats</a>
-    <button type="button" class="btn btn-outline-primary">Add flat</button>
+    <button type="button" class="btn btn-outline-primary"
+    ><%= link_to "Add flat", new_flat_path %></button>
   </div>
 </nav>
+<h1>All our flats (<%=@flats.count %>)</h1>
 <div class="container">
 
   <div class="cards row justify-content-between">
     <% @flats.each do |flat| %>
-      <div class="card col-4" style="width: 18rem;">
+      <div class="card col-md-4" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
@@ -16,7 +18,14 @@
             <i class="fa-solid fa-hand-holding-dollar"></i> <%= flat.price_per_night %> <br>
             <i class="fa-solid fa-bed"></i> <%= flat.number_of_guests %> <br>
           </p>
-          <a href="#" class="card-link">More info</a>
+            <div class="flat-card-actions">
+              <%= link_to "More info", flat_path(flat) %>
+              <%= link_to "Edit", edit_flat_path(flat), class: "ms-3 text-warning" %>
+              <%= link_to "Remove", flat_path(flat),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "ms-3 text-danger"
+              %>
+            </div>
         </div>
       </div>
     <% end %>

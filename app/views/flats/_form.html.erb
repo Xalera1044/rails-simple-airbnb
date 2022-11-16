@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Flats</a>
+    <button type="button" class="btn btn-outline-primary"
+    ><%= link_to "Return", flats_path %></button>
+  </div>
+</nav>
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <div class="card row col-4">
+        <%= form_with model: restaurant do |f| %>
+          <label for="formGroupExampleInput">Name</label>
+          <input class="form-control" placeholder="Summer Garden" <%= f.text_field :name %>>
+          <label for="formGroupExampleInput">Address</label>
+          <input class="form-control" placeholder="13 Ridge str" <%= f.text_field :address %>>
+          <label for="formGroupExampleInput">Description</label>
+          <input class="form-control" placeholder="Very nice place" <%= f.text_field :description %>>
+          <label for="formGroupExampleInput">Price per night</label>
+          <input class="form-control" laceholder="$" <%= f.number_field :price_per_night %> >
+          <label for="formGroupExampleInput">Number of guests</label>
+          <input class="form-control" <%= f.number_field :number_of_guests %>>
+          <button class="btn btn-primary" ><%= f.submit %></button>
+        <% end %>
+      </div>
+    </div>
+  </form>
+</div>
