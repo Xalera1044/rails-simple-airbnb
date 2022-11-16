@@ -1,2 +1,24 @@
-<h1>Flats#index</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Flats</a>
+    <button type="button" class="btn btn-outline-primary">Add flat</button>
+  </div>
+</nav>
+<div class="container">
+
+  <div class="cards row justify-content-between">
+    <% @flats.each do |flat| %>
+      <div class="card col-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+          <p class="card-text"><%= flat.description %> <br>
+            <i class="fa-solid fa-hand-holding-dollar"></i> <%= flat.price_per_night %> <br>
+            <i class="fa-solid fa-bed"></i> <%= flat.number_of_guests %> <br>
+          </p>
+          <a href="#" class="card-link">More info</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
