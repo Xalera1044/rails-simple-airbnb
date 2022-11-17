@@ -10,17 +10,17 @@
   <form>
     <div class="form-group">
       <div class="card row col-4">
-        <%= form_with model: restaurant do |f| %>
+        <%= form_with model: flat do |f| %>
           <label for="formGroupExampleInput">Name</label>
-          <input class="form-control" placeholder="Summer Garden" <%= f.text_field :name %>>
+          <input class="form-control" placeholder="Summer Garden" ><%= f.text_field :name %>
           <label for="formGroupExampleInput">Address</label>
-          <input class="form-control" placeholder="13 Ridge str" <%= f.text_field :address %>>
+          <input class="form-control" placeholder="13 Ridge str" ><%= f.text_field :address %>
           <label for="formGroupExampleInput">Description</label>
-          <input class="form-control" placeholder="Very nice place" <%= f.text_field :description %>>
+          <input class="form-control" placeholder="Very nice place" ><%= f.text_field :description %>
           <label for="formGroupExampleInput">Price per night</label>
-          <input class="form-control" laceholder="$" <%= f.number_field :price_per_night %> >
+          <input class="form-control" laceholder="$" ><%= f.number_field :price_per_night %>
           <label for="formGroupExampleInput">Number of guests</label>
-          <input class="form-control" <%= f.number_field :number_of_guests %>>
+          <input class="form-control" ><%= f.number_field :number_of_guests %>
           <button class="btn btn-primary" ><%= f.submit %></button>
         <% end %>
       </div>

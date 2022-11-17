@@ -11,6 +11,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @flat = Flat.all
   end
 
   def new

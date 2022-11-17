@@ -29,3 +29,12 @@ Flat.create!(
   price_per_night: 705,
   number_of_guests: 4
 )
+
+
+Flat.create!(
+  name: 'Mardakannes',
+  address: 'Mardakan street',
+  description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
+  price_per_night: 105,
+  number_of_guests: 4
+)
